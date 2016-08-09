@@ -1,0 +1,30 @@
+{% extends "head.html" %}
+
+{% block nav %}all{% endblock %}
+
+{% block content %}
+
+<div>
+<table class="table">
+  <col width="100" />
+  <col width="50" />
+  <thead>
+    <tr>
+      <th>名字</th>
+      <th>备注</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for doc in docs %}
+    <tr>
+      <td>
+        <a href="/info?name={{doc.name}}">{{ doc.name }}</a>
+      </td>
+      <td>{{ doc.desc }} </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}
